@@ -4,6 +4,7 @@ import { Box, Thumbnail, commonProps } from '../styled'
 import Layout from '../components/Layout'
 import Img from '../components/PreviewCompatibleImage'
 import { Gallery } from '../templates/product-page-template'
+import GEditor from '../cms/GEditor'
 
 
 const Page = ({ data }) => {
@@ -18,7 +19,7 @@ const Page = ({ data }) => {
   return (
     <>
       <Layout>
-      
+      {window ? <GEditor />: null}
       <Box mt={20} width={1} display={'flex'} flexWrap={'wrap'} alightContent={'stretch'} alignItems={'stretch'}>
         {products.map(edge => {
           const { frontmatter } = edge.node

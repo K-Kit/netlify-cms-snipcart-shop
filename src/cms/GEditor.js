@@ -17,20 +17,23 @@ min-height: 80vh;
 class GEditor extends React.Component {
     constructor(props) {
       super(props)
-      let plugins = [
-        gjsBasicBlocks,
-      ];
-      this.editor = GrapesJS.init({
-        container: "#gjs",
-        plugins
-      }
-      )
+      
     }
     handleChange(e) {
       this.props.onChange(e.target.value.split(',').map((e) => e.trim()));
     }
     componentDidMount() {
-      document && document.getElementById(id).append(this.editor.render());
+        
+        window.grapesjs = GrapesJS
+        let plugins = [
+            gjsBasicBlocks,
+          ];
+          this.editor = GrapesJS.init({
+            container: "#gjs",
+            plugins
+          }
+          )
+      document.getElementById(id).append(this.editor.render());
     }
     render() {
       return (
