@@ -25,6 +25,14 @@ class GEditor extends React.Component {
       this.props.onChange(e.target.value.split(',').map((e) => e.trim()));
     }
     componentDidMount() {
+
+      var link = document.createElement( "link" );
+      link.href = "http://unpkg.com/grapesjs/dist/css/grapes.min.css"
+      link.type = "text/css";
+      link.rel = "stylesheet";
+      link.media = "screen,print";
+
+      document.getElementsByTagName( "head" )[0].appendChild( link );
         
         window.grapesjs = GrapesJS
         let plugins = [
@@ -35,7 +43,8 @@ class GEditor extends React.Component {
             plugins
           }
           )
-      document.getElementById(id).append(this.editor.render());
+      // document.getElementById(id).append(this.editor.render());
+      this.editor.render()
     }
     render() {
       return (
