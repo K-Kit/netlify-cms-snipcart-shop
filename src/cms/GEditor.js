@@ -1,7 +1,9 @@
 import React from "react";
 import styled, { StyleSheetManager } from 'styled-components'
+
 import GrapesJS from 'grapesjs';
 import gjsBasicBlocks from 'grapesjs-blocks-basic';
+
 
 const id="gjs"
 const Container = styled.div`
