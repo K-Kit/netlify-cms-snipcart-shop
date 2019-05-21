@@ -10,11 +10,7 @@ const Container = styled.div`
 width: 100%;
 min-height: 80vh;
 border: 3px solid black;
-.gjs-editor { 
-width: 100%;
-z-index: 9999;
-min-height: 80vh;
-}
+
 `
 class GEditor extends React.Component {
     constructor(props) {
