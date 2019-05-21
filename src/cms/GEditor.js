@@ -27,7 +27,7 @@ class GEditor extends React.Component {
     componentDidMount() {
 
       var link = document.createElement( "link" );
-      link.href = "http://unpkg.com/grapesjs/dist/css/grapes.min.css"
+      link.href = "https://unpkg.com/grapesjs/dist/css/grapes.min.css"
       link.type = "text/css";
       link.rel = "stylesheet";
       link.media = "screen,print";
