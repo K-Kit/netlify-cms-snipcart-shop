@@ -53,4 +53,4 @@ CMS.registerPreviewTemplate('about', props => Wrapped(AboutPagePreview, props))
 CMS.registerPreviewTemplate('products', props => Wrapped(ProductPreview, props))
 
   
-CMS.registerWidget('grape', props => Wrapped(GEditor, {...props, blocks:[]}), ({value}) => <HTMLContent content={value.html} css={value.css} /> );
+CMS.registerWidget('grape', props => Wrapped(GEditor, {...props, blocks:[], webpage: true}), ({value}) => <HTMLContent content={value.html} css={value.css} /> );
