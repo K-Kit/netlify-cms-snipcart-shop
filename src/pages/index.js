@@ -15,7 +15,9 @@ const Page = ({ data }) => {
   // id: "d7e
 
   return (
-    <Layout>
+    <>
+      <Layout>
+      
       <Box mt={20} width={1} display={'flex'} flexWrap={'wrap'} alightContent={'stretch'} alignItems={'stretch'}>
         {products.map(edge => {
           const { frontmatter } = edge.node
@@ -40,6 +42,7 @@ const Page = ({ data }) => {
         })}
       </Box>
     </Layout>
+    </>
   )
 }
 export default Page

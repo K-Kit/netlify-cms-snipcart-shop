@@ -92,7 +92,7 @@ export const ProductTemplate = ({
   helmet,
   selectedImage,
   setSelectedImage,
-  price
+  price,
 }) => {
   price = price || 99.99
   return (
@@ -119,8 +119,10 @@ export const ProductTemplate = ({
                             variant options
                             price datas for variant
                           */}
-          <p>{description}</p>
-          <br/>
+          
+        {description && <HTMLContent content={description.html} css={description.css}/>}
+
+                  <br/>
 
           <Button
             className="snipcart-add-item"

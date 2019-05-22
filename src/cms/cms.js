@@ -1,10 +1,16 @@
-import React from 'react'
+import $ from 'jquery'
+import React, {createClass} from 'react'
 import CMS from 'netlify-cms'
 import '@material-ui/core'
 
 import AboutPagePreview from './preview-templates/AboutPagePreview'
 import ProductPreview from './preview-templates/ProductPreview'
-import { StyleSheetManager } from 'styled-components'
+import styled, { StyleSheetManager } from 'styled-components'
+import GEditor from './GEditor'
+// import GEditor from "grapesjs-react"
+import 'grapesjs/dist/css/grapes.min.css';
+import {HTMLContent} from "../components/Content"
+
 
 //Component used to Enable netlify CMS to apply the styles added through styled-components
 class CSSInjector extends React.Component {
@@ -42,10 +48,9 @@ const Wrapped = (Preview, props) => {
   )
 }
 
-// CMS.registerPreviewTemplate('index', props => (
-//   <CSSInjector>
-//     <IndexPagePreview {...props} />{' '}
-//   </CSSInjector>
-// ))
+
 CMS.registerPreviewTemplate('about', props => Wrapped(AboutPagePreview, props))
 CMS.registerPreviewTemplate('products', props => Wrapped(ProductPreview, props))
+
+  
+CMS.registerWidget('grape', props => Wrapped(GEditor, {...props, blocks:[], webpage: true}), ({value}) => <HTMLContent content={value.html} css={value.css} /> );
