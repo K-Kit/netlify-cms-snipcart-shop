@@ -29,7 +29,7 @@
     "lodash": "^4.17.5",
     "lodash-webpack-plugin": "^0.11.4",
     "netlify-cms": "latest",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "parcel-bundler": "^1.9.4",
     "polished": "^3.3.0",
     "prop-types": "^15.6.0",
